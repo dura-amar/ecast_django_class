@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% for b in blogs %}
+<hr>
+{{b.title}}<br/>
+{{b.author}}<br/>
+{{b.content}}<br/>
+{{b.date_posted}}
+<hr>
+{% endfor %}
+{% endblock content %}
