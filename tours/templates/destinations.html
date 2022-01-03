@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+{% for d in destinations %}
+Name : {{d.name}}<br/>
+Description : {{d.description}}<br/>
+Categories : {% for c in d.category.all %}
+{{c.name}}<br/>
+{% endfor %}
+District : {{d.district.dname}}<br/>
+<hr>
+{% endfor %}
+{% endblock content %}

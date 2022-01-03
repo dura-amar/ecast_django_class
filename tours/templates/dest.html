@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+Name : {{dest.name}}<br/>
+Description : {{dest.description}}<br/>
+Category : {% for c in dest.category.all %}
+{{c.name}}<br/>
+{% endfor %}
+District : {{dest.district.dname}}<br/>
+{% endblock content %}

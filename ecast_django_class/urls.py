@@ -17,11 +17,13 @@ from django.contrib import admin
 from django.urls import path
 from home.views import home_view
 from blog.views import blog
-from tour.views import destination
+from tours.views import tour_destinations
+from tours.views import a_tour_destination
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/', home_view),
-    path('blog/',blog),
-    path('tour/destinations',destination),
+    path('blog/',blog,name='blog'),
+    path('tour/destinations',tour_destinations,name='all_destinations'),
+    path('tour/destination/<int:id_val>',a_tour_destination, name='a_destination'),
 ]
