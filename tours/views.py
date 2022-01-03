@@ -10,3 +10,7 @@ def tour_destinations(request):
 def a_tour_destination(request,id_val):
     dest=Destination.objects.get(id=id_val)
     return render(request,'dest.html',{'dest':dest})
+
+def tour_destionation_link(request):
+    destinations=Destination.objects.all()
+    return render(request,'dest_link.html',{'destinations':destinations})

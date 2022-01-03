@@ -18,6 +18,7 @@ from django.urls import path
 from home.views import home_view
 from blog.views import blog
 from tours.views import tour_destinations
+from tours.views import tour_destionation_link
 from tours.views import a_tour_destination
 
 urlpatterns = [
@@ -26,4 +27,5 @@ urlpatterns = [
     path('blog/',blog,name='blog'),
     path('tour/destinations',tour_destinations,name='all_destinations'),
     path('tour/destination/<int:id_val>',a_tour_destination, name='a_destination'),
+    path('tour/destinations/links',tour_destionation_link, name='destinationlink'),
 ]
