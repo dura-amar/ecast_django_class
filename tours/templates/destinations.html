@@ -1,12 +1,21 @@
 {% extends 'base.html' %}
 {% block content %}
-{% for d in destinations %}
-Name : {{d.name}}<br/>
-Description : {{d.description}}<br/>
-Categories : {% for c in d.category.all %}
-{{c.name}}<br/>
-{% endfor %}
-District : {{d.district.dname}}<br/>
-<hr>
-{% endfor %}
+<div class="container ">
+    <div class="row">
+       {% for d in destinations %}
+       <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">{{d.name}}</h5>
+          {% for c in d.category.all %}
+          <h6 class="card-subtitle mb-2 text-muted">{{c.name}}</h6>
+          {% endfor %}
+          <p class="card-text">{{d.description}}</p>
+          <a href="{% url 'a_destination' d.id %}" class="card-link">View Details</a>
+        </div>
+      </div>
+       {% endfor %}
+    </div>
+</div>
+
+
 {% endblock content %}

@@ -1,0 +1,43 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="\static\css\new_dest.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <title>{{page_title}}</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+           <nav>
+              <div class="menu-icon">
+                 <i class="fa fa-bars fa-2x"></i>
+              </div>
+              <div class="logo">
+                 OUR TOURS
+              </div>
+              <div class="menu">
+                 <ul>
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'blog' %}">Blog</a></li>
+                    <li><a href="{% url 'all_destinations' %}">Destinations</a></li>
+                 </ul>
+              </div>
+           </nav>
+        </header>
+     </div>
+      {% block content %}
+
+      {% endblock content%}
+    
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="\static\js\new_dest.js"></script>
+</body>
+</html>

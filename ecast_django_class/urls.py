@@ -15,6 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+
+from django.conf import settings
+from django.conf.urls.static import static
+from airport.views import all_airport
+
 from home.views import home_view
 from blog.views import blog
 from tours.views import tour_destinations
@@ -23,9 +28,15 @@ from tours.views import a_tour_destination
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/', home_view),
+    path('',home_view),
+    path('home/', home_view, name='home'),
     path('blog/',blog,name='blog'),
-    path('tour/destinations',tour_destinations,name='all_destinations'),
+    path('tour/destinations/',tour_destinations,name='all_destinations'),
     path('tour/destination/<int:id_val>',a_tour_destination, name='a_destination'),
-    path('tour/destinations/links',tour_destionation_link, name='destinationlink'),
+    path('tour/destinations/links/',tour_destionation_link, name='destinationlink'),
+    path('airports/',all_airport,name='allAirports')
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+    

@@ -1,19 +1,6 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
-<hr>
-{% for val in intros %}
-{{val.name}}
-{{val.age}}
-{{val.college}}
-{% endfor %}
-<hr>
-
-<hr>
-{% for subject in subs %}
-{{subject.title}}
-{{subject.subject_code}}
-{% endfor %}
-<hr>
-
-{% endblock content%}
+<h1>This is home</h1>
+<img src="{% static 'abc.png' %}">
+{% endblock content %}
