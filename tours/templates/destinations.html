@@ -1,12 +1,24 @@
 {% extends 'base.html' %}
 {% block content %}
+<hr>
+{% if request.user.is_authenticated %}
+Username : {{request.user.username}}<br/>
+<a href="{% url 'logout' %}">LOGOUT</a>
+{% else %}
+<a href="{% url 'login' %}">LOGIN</a>
+{% endif %}
+
+<hr>
 {% for d in destinations %}
-Name : {{d.name}}<br/>
+Name : <a href="{% url 'a_destination' d.id %}">{{d.name}}</a><br/>
 Description : {{d.description}}<br/>
 Categories : {% for c in d.category.all %}
-{{c.name}}<br/>
+{{c.name}}, 
 {% endfor %}
+<br/>
 District : {{d.district.dname}}<br/>
+<a href="{% url 'update_destination' d.id %}">Update</a> 
+<a href="{% url 'delete_destination' d.id %}">Delete</a> <br/>
 <hr>
 {% endfor %}
 {% endblock content %}

@@ -3,7 +3,7 @@
 {% block content %}
 {% for b in blogs %}
 <hr>
-{{b.title}}<br/>
+<a href="{% url 'view_blog' b.title|slugify %}">{{b.title}}</a><br/>
 {{b.author}}<br/>
 {{b.content}}<br/>
 {{b.date_posted}}
