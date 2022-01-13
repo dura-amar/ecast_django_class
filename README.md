@@ -55,7 +55,7 @@ class Blog(models.Model):
 {% block content %}
 {% for b in blogs %}
 <hr>
-<a href="{% url 'view_blog' b.title|slugify %}">{{b.title}}</a><br/>
+<a href="{% url 'view_a_blog' b.id %}">{{b.title}}</a><br/>
 {{b.author}}<br/>
 {{b.content}}<br/>
 {{b.date_posted}}
@@ -64,3 +64,12 @@ class Blog(models.Model):
 {% endblock content %}
   
   ```
+- Then, in ```urls.py``` add new url path:
+
+```django
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('blogs/',view_all_blogs,name='view_all_blogs'),
+    path('blog/<int:blog_id>',view_a_blog,name='view_a_blog'),
+]
+```
