@@ -51,7 +51,7 @@ from blog.models import Blog
     return render(request, 'blogs.html', context)
   ```
   - Inside app folder, create ```templates``` folder.
-  - Inside ```templates``` folder, create ```blogs.html```
+  - Inside ```templates``` folder, create ```html``` template file ```blogs.html```
   - In ```blogs.html```
   ```django
 {% extends 'base.html' %}
