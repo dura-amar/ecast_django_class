@@ -40,6 +40,10 @@ class Blog(models.Model):
         return self.title 
   ```
   - In ```view.py``` create view functions :
+```python
+from blog.models import Blog
+```
+
   ```python
   def view_all_blogs(request):
     blogs=Blog.objects.all()
@@ -65,8 +69,11 @@ class Blog(models.Model):
   
   ```
 - Then, in ```urls.py``` add new url path:
+```python
+from blog.views import view_all_blogs, view_a_blog
+```
 
-```django
+```python
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('blogs/',view_all_blogs,name='view_all_blogs'),
