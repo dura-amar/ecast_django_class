@@ -80,3 +80,13 @@ urlpatterns = [
     path('blog/<int:blog_id>',view_a_blog,name='view_a_blog'),
 ]
 ```
+- Add some blogs from ```localhost:8000/admin``` site
+- If you cannot access the site,
+Make sure server is running otherwise ```py manage.py runserver```
+- If you cannot login into admin panal
+``` py manage.py createsuperuser ```
+Create the username and passoword, the check ```localhost:8000/admin``` again
+
+- After adding the blogs from the admin panel
+- Check the url : ```localhost:8000/blogs```
+ you must see your blogs.
