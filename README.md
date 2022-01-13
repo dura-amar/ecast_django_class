@@ -25,3 +25,42 @@ Framework :`Django`
 
 **4. Create an app**
   - ``` python manage.py startapp your_app_name```
+
+## A simple flow 
+- Inside app folder
+- In ```models.py``` create models : 
+```python
+class Blog(models.Model):
+    title=models.CharField(max_length=100)
+    author=models.CharField(max_length=40)
+    content=models.TextField()
+    date_posted=models.DateTimeField(auto_now_add=True)
+    
+    def __str__(self):
+        return self.title 
+  ```
+  - In ```view.py``` create view functions :
+  ```python
+  def view_all_blogs(request):
+    blogs=Blog.objects.all()
+    context={'blogs': blogs}
+    return render(request, 'blogs.html', context)
+  ```
+  - Inside app folder, create ```templates``` folder.
+  - Inside ```templates``` folder, create ```blogs.html```
+  - In ```blogs.html```
+  ```django
+{% extends 'base.html' %}
+
+{% block content %}
+{% for b in blogs %}
+<hr>
+<a href="{% url 'view_blog' b.title|slugify %}">{{b.title}}</a><br/>
+{{b.author}}<br/>
+{{b.content}}<br/>
+{{b.date_posted}}
+<hr>
+{% endfor %}
+{% endblock content %}
+  
+  ```
