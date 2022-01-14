@@ -90,3 +90,16 @@ Create the username and passoword, the check ```localhost:8000/admin``` again
 - After adding the blogs from the admin panel
 - Check the url : ```localhost:8000/blogs```
  you must see your blogs.
+ 
+ ### For Delete
+ - Create a view in ```views.py```
+ - Set url in ```urls.py```
+ - Add delete button in template ```.html``` file
+ 
+ 
+ ### For Forms
+ - Create ```forms.py``` file in app folder
+ - Create ModelForm in ```forms.py```
+ - Create a view function in ```views.py```
+ - Create a template ```.html``` file in ```templates``` folder
+ - Set url in ```urls.py```
