@@ -7,6 +7,14 @@
 
 - Installation
   ``` pip install django-ckeditor ```
+- Inside ```setting.py```,
+  - Add ```ckeditor``` to ```INSTALLED_APPS```
+  ```django
+    INSTALLED_APPS = [
+    ...,
+    'ckeditor',
+  ]
+  ```
 - Inside ```models.py```
   - ```python
        from ckeditor.fields import RichTextField'
