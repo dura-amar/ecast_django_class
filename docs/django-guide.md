@@ -9,7 +9,7 @@
   ``` pip install django-ckeditor ```
 - Inside ```setting.py```,
   - Add ```ckeditor``` to ```INSTALLED_APPS```
-  ```django
+  ```python
     INSTALLED_APPS = [
     ...,
     'ckeditor',
@@ -81,8 +81,8 @@
     ```
     - Inside ```<form><form>```<br>
       Add 
-      ```django
-        {{ form|crispy }}
+      ```python
+      {{ form|crispy }}
       ```
       
     example:
