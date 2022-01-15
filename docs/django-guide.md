@@ -86,7 +86,7 @@
       ```
       
     example:
-    ```
+    ```django
     {% extends 'base.html' %}
     {% load crispy_forms_tags %}
 
@@ -98,4 +98,6 @@
       </form>
     {% endblock %}
     ```
-    
+  <!--- Expected output :
+    ![crispy-forms-output]()
+-->
