@@ -2,14 +2,15 @@
 
 ## Using ```ckeditor``` in your django
 <br>
+
 ### For simple use
 
 - Installation
   ``` pip install django-ckeditor ```
-- Inside ```models.py```
-  - ```from ckeditor.fields import RichTextField```
+- Inside ```python models.py```
+  - ```python from ckeditor.fields import RichTextField```
   - Set
-    ```content=RichTextField(blank=True, null=True)```
+    ```python content=RichTextField(blank=True, null=True)```
     Instead of 
-    ```content=models.TextField(blank=True, null=True)```
+    ```python content=models.TextField(blank=True, null=True)```
 
